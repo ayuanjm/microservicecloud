@@ -1,0 +1,11 @@
+server:
+  port: 8073
+spring:
+  application:
+    name: springcloud-stream-producer
+#    rabbitmq不写就是默认配置
+#  rabbitmq:
+#    host: hocalhost
+#    port: 5672
+#    username: guest
+#    password: guest
