@@ -1,8 +1,9 @@
 package com.yuan.springcloud.controller;
 
-import com.yuan.springcloud.stream.SendMessage;
+import com.atguigu.springcloud.listener.MyQueue;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,24 +16,25 @@ import java.util.UUID;
  */
 @RestController
 @Slf4j
+@EnableBinding({MyQueue.class})
 public class sendMsgController {
     @Autowired
-    private SendMessage sendMessage;
+    private MyQueue queue;
 
     /**
      * 生产者流程
      * 1 创建消息发送通道
      * 2 生产投递消息（生产者往通道中发送消息）
-     * 3 开启绑定（结合）@EnableBinding(SendMessage.class)
+     * 3 开启绑定（结合）@EnableBinding()
      *
      * @return
      */
     @RequestMapping("sendMsg")
     public String sendMsg() {
         String msg = UUID.randomUUID().toString();
-        log.info(SendMessage.OUT_PUT + "生产者发送内容msg:{}", msg);
+        log.info("生产者发送内容msg:{}", msg);
         Message build = MessageBuilder.withPayload(msg).build();
-        sendMessage.sendMsg().send(build);
+        queue.output().send(build);
         return "success";
     }
 }

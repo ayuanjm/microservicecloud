@@ -1,5 +1,7 @@
 com/atguigu/springcloud/service/DeptClientService.class
 com/atguigu/springcloud/service/DeptClientServiceFallbackFactory.class
+com/atguigu/springcloud/entities/Dept.class
+com/atguigu/springcloud/listener/MyQueue.class
+com/atguigu/springcloud/service/DeptClientException.class
 com/atguigu/springcloud/entities/Page.class
 com/atguigu/springcloud/service/DeptClientServiceFallbackFactory$1.class
-com/atguigu/springcloud/entities/Dept.class

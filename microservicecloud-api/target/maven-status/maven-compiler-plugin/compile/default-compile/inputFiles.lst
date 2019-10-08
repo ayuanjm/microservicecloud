@@ -1,4 +1,6 @@
+/Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/listener/MyQueue.java
 /Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/entities/Dept.java
 /Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/service/DeptClientServiceFallbackFactory.java
 /Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/entities/Page.java
 /Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/service/DeptClientService.java
+/Users/yuan/eclipse/springcloud/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/service/DeptClientException.java
