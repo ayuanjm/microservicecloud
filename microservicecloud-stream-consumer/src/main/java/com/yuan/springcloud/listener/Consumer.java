@@ -19,11 +19,12 @@ public class Consumer {
 
     /**
      * StreamListener value 是一个bean实例（@Output，@Input的value）,而不是根据"字符串名字"。
-     * StreamListener 监听的是消费者input管道实例,需要与生产者端的output管道实例一致。
+     * StreamListener 监听的是消费者input管道实例,需要与生产者端的output管道实例一致，
+     * 如果input-output设置了destination交换机，监听的管道实例可以是input自己的，不需要和output管道实例一致。
      *
      * @param msg
      */
-    @StreamListener(MyQueue.CHANNEL_OUTPUT)
+    @StreamListener(MyQueue.CHANNEL_INPUT)
     public void redMsg(String msg) {
         log.info("消费者获取到生产者投递的消息serverPort:{},msg:{}", serverPort, msg);
     }

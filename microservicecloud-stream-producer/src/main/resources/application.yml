@@ -3,9 +3,15 @@ server:
 spring:
   application:
     name: springcloud-stream-producer
-#    rabbitmq不写就是默认配置
-#  rabbitmq:
-#    host: hocalhost
-#    port: 5672
-#    username: guest
-#    password: guest
+  #    rabbitmq不写就是默认配置
+  #  rabbitmq:
+  #    host: hocalhost
+  #    port: 5672
+  #    username: guest
+  #    password: guest
+
+  cloud: #消费者分组后，保证一条消息在同一个组中只有一个消费者进行消费，轮询机制。
+    stream:
+      bindings:
+        channel_output:  #指定管道名称
+          destination: stream_channel  #指定output，input对应的交换机

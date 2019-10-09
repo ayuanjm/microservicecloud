@@ -9,3 +9,11 @@ spring:
 #    port: 5672
 #    username: guest
 #    password: guest
+
+  cloud: #消费者分组后，保证一条消息在同一个组中只有一个消费者进行消费，轮询机制。
+    stream:
+      bindings:
+        #        my_stream_channel: #指定管道名称
+        #          group: stream_yuan #指定该应用实例属于stream_yuan分组
+        channel_output:
+          destination: stream_channel

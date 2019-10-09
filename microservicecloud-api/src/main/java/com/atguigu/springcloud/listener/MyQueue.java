@@ -26,7 +26,6 @@ public interface MyQueue {
      *
      * @return
      */
-//    @Input(MyQueue.CHANNEL_INPUT)
-    @Input(MyQueue.CHANNEL_OUTPUT)
+    @Input(MyQueue.CHANNEL_INPUT)
     SubscribableChannel input();
 }
