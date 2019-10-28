@@ -43,3 +43,14 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 9000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
