@@ -25,8 +25,8 @@ spring:
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-#      register-with-eureka: false
-#      fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+      #      register-with-eureka: false
+      #      fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
 
       #            defaultZone: http://localhost:7001/eureka
       defaultZone: http://localhost1:7001/eureka/,http://localhost2:7002/eureka/,http://localhost3:7003/eureka/
@@ -35,6 +35,8 @@ eureka:
     instance-id: microservicecloud-dept8001
     #    Eureka Client向Eureka Server进行注册的时候默认采用的是IP Address方式。
     prefer-ip-address: true     #访问路径可以显示IP地址,优先使用ip地址方式进行注册服务
+    lease-renewal-interval-in-seconds: 5 #每间隔5s，向服务端发送一次心跳
+    lease-expiration-duration-in-seconds: 10 #如果我10s之内没有给你发心跳，就代表我“死”了，将我踢出掉。
 
 #    hostname: yuan     #    采用主机名的方式进行注册服务
 info:
